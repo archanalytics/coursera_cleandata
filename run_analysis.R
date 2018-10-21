@@ -92,7 +92,3 @@ dfAccelero.summary<-aggregate(. ~subject + activity, dfAccelero, mean)
 dfAccelero.summary<-dfAccelero.summary[order(dfAccelero.summary$subject,dfAccelero.summary$activity),]
 write.table(dfAccelero.summary, file = "tidydata.txt",row.name=FALSE)
 
-# FINAL STEP - PRODUCE CODEBOOK.MD
-library("codebook")
-md <- codebook(dfAccelero,survey_repetition = "repeated_once", metadata_table = FALSE)
-write(md, file="codebook.md",ncolumns=1,sep="")
